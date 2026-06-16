@@ -1,29 +1,272 @@
-Act as an expert front-end developer and UI/UX designer. Write a single, completely self-contained `index.html` file for my university application portfolio website. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bradley | University Application Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        :root {
+            --navy: #0A2342;
+            --gold: #D4AF37;
+            --light-gray: #F5F7FA;
+            --dark-gray: #333333;
+            --white: #ffffff;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+            line-height: 1.6;
+        }
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--navy);
+            padding: 1rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        .hamburger {
+            display: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        section {
+            padding: 10rem 8% 5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(rgba(10, 35, 66, 0.9), rgba(10, 35, 66, 0.8)), url('');
+            color: var(--white);
+            padding-top: 0;
+        }
+        #hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1rem;
+        }
+        #hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        .cta-btn {
+            padding: 1rem 2.2rem;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            width: fit-content;
+            transition: all 0.3s ease;
+        }
+        .cta-btn:hover {
+            background: #b8962e;
+            transform: translateY(-3px);
+        }
+        /* Section General Style */
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 2.5rem;
+            border-left: 5px solid var(--gold);
+            padding-left: 1rem;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+        }
+        .card h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .gold-text {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem;
+        }
+        /* Mobile Responsive */
+        @media(max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: var(--navy);
+                width: 100%;
+                flex-direction: column;
+                padding: 2rem 8%;
+                display: none;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            #hero h1 {
+                font-size: 2.4rem;
+            }
+            section {
+                padding-top: 8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Bradley</div>
+        <div class="nav-links" id="navMenu">
+            <a href="#hero">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#academics">Achievements</a>
+            <a href="#extracurricular">Extracurricular</a>
+            <a href="#project">Proud Project</a>
+            <a href="#major">University Goals</a>
+        </div>
+        <div class="hamburger" id="menuBtn">☰</div>
+    </nav>
 
-The website must be modern, professional, sleek, and highly responsive. Because it is a single file, include all CSS in a `<style>` tag and all JavaScript in a `<script>` tag. Do not link to external local files. Use Tailwind CSS via CDN for styling, and Lucide Icons or FontAwesome via CDN for icons. Use a clean, modern font like Inter or Plus Jakarta Sans via Google Fonts.
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Hi, I'm Bradley</h1>
+        <p>Grade 11 student passionate about scientific research, balanced academics, and team leadership. Exploring future studies in Biology or Chemistry.</p>
+        <a href="#about" class="cta-btn">Explore My Profile</a>
+    </section>
 
-### 1. Design & Aesthetic Guidelines:
-- **Style:** Minimalist, premium, and professional (tech/academic portfolio vibe).
-- **Color Palette:** A sophisticated dark mode or a clean light mode with high contrast. Use a deep slate/navy or crisp white background, with a vibrant accent color (e.g., electric blue, emerald green, or deep violet) for highlights, gradients, and buttons.
-- **Micro-interactions:** Include smooth scrolling, subtle hover effects on cards and buttons (like slight lifting or accent glows), and a smooth fade-in animation when the page loads.
+    <!-- About Me -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <h3>A Friendly Introduction</h3>
+            <p>I’m Bradley, an enthusiastic Grade 11 student driven by curiosity for the natural sciences. I maintain high academic standards while staying fully committed to team sports and group competitions. I value balance: rigorous classroom learning alongside teamwork, discipline, and resilience from football and golf. Whether working on lab-focused STEM challenges or competing in sports matches, I always aim to collaborate, learn continuously, and push myself to grow. My long-term goal is to dive deep into biological and chemical sciences at university to understand molecular systems and natural life processes.</p>
+        </div>
+    </section>
 
-### 2. Website Structure & Sections:
-Please build the following sections sequentially within the single page:
+    <!-- Academic Awards & Grades -->
+    <section id="academics">
+        <h2 class="section-title">Academic Excellence & Awards</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Top Academic Grades</h3>
+                <p>I have consistently earned <span class="gold-text">A STAR</span> grades across my core science subjects, demonstrating consistent mastery of complex chemistry and biology coursework, strong analytical thinking, and dedicated independent study habits.</p>
+            </div>
+            <div class="card">
+                <h3>Global STEM Competition Award</h3>
+                <p>I was honoured to receive the <span class="gold-text">iGEM Global Gold Award</span> for collaborative synthetic biology research. This experience taught me academic research design, scientific presentation, cross-team communication, and critical lab problem-solving — core skills I plan to expand at university.</p>
+            </div>
+        </div>
+    </section>
 
-- **Navigation Bar:** Sticky/fixed top nav with my name on the left and smooth-scroll links on the right (About, Projects, Academics, Contact). Include a subtle blur background effect (backdrop-blur).
-- **Hero Section:** A bold, engaging opening. It should feature a catchy headline (e.g., "Hi, I'm [Name] — Aspiring [Field of Interest/e.g., Computer Scientist & Innovator]"), a brief 2-sentence value statement, a call-to-action button ("View My Work" scrolling to Projects), and social/GitHub links.
-- **About Me / Achievements Section:** A 2-column layout. Left side: A stylized placeholder for a professional headshot or a sleek abstract geometric graphic. Right side: A brief biography highlighting my passion, drive, and a grid of "Key Stats" (e.g., GPA: 4.0, AP/IB Courses: 6, Extracurriculars: 4+).
-- **Projects / Research Section:** A responsive grid (2 or 3 columns) of cards. Each card must include a project title, a short description, technology/skill tags (e.g., Python, Research, Leadership), and a placeholder link ("View Project" or "GitHub"). Include at least 3 placeholder cards.
-- **Academics & Extracurriculars Timeline:** A clean, vertical timeline showing my journey. Include nodes for:
-  - School achievements/awards
-  - Leadership roles (e.g., Club President, Team Captain)
-  - Summer programs, internships, or online certifications
-- **Contact / Footer Section:** A clean footer with a simple contact form placeholder (Name, Email, Message fields) or a direct "Let's Connect" area with my email and LinkedIn placeholders. Include a copyright line at the very bottom.
+    <!-- Clubs & Sports -->
+    <section id="extracurricular">
+        <h2 class="section-title">Clubs & Sports</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Football Club</h3>
+                <p>I am an active member of the school Football Club, attending regular training, team strategy sessions, and inter-school tournaments year-round. Being part of this club builds my leadership, communication, and ability to coordinate with teammates under competitive pressure.</p>
+            </div>
+            <div class="card">
+                <h3>Sports: Football & Golf</h3>
+                <p>Football teaches me fast teamwork and quick decision-making during live matches. Golf complements this by training my patience, precision, and long-term strategic planning. Together, these two sports shape my balanced, resilient mindset for academics and research.</p>
+            </div>
+        </div>
+    </section>
 
-### 3. Technical Requirements:
-- Use semantic HTML5 markup (`<header>`, `<main>`, `<section>`, `<footer>`).
-- Ensure full mobile responsiveness using Tailwind's responsive utilities (`sm:`, `md:`, `lg:`).
-- Use standard Unsplash URLs for placeholder images (e.g., high-quality abstract or tech imagery) so the site looks complete immediately.
-- Write clean, well-commented code so I can easily replace the text placeholders with my actual information.
+    <!-- Proud Project -->
+    <section id="project">
+        <h2 class="section-title">Project I’m Proud Of</h2>
+        <div class="card">
+            <h3>Leading My Team to Win Competitive Football Matches</h3>
+            <p>My most meaningful hands-on project is contributing to our team’s series of winning football matches against rival schools. This required consistent weekly training, coordinating team tactics, supporting less experienced teammates, and staying calm during high-stakes games. This experience is far more than sports success — it’s a masterclass in collective goal-setting, conflict resolution, sustained effort, and motivating a group toward shared victory. The discipline I built here transfers directly to my group STEM work and university research aspirations.</p>
+        </div>
+    </section>
 
-Generate ONLY the complete, raw HTML code inside a single code block. Do not provide markdown explanations before or after the code.
+    <!-- Intended University Major -->
+    <section id="major">
+        <h2 class="section-title">Intended University Major</h2>
+        <div class="card">
+            <h3>Biology or Chemistry</h3>
+            <p>My academic and competition experiences solidified my passion for laboratory science. I aim to pursue either Biology or Chemistry at undergraduate level. I am fascinated by biochemical reactions, cellular biology, molecular structures, and how chemical processes sustain all living organisms. The iGEM competition sparked my interest in applied biological research, and I hope to participate in university lab projects, independent research papers, and scientific community outreach during my degree.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Thank You for Reviewing My Application Portfolio</h3>
+        <p>Bradley | Grade 11 Student | Prospective Biology & Chemistry Undergraduate</p>
+    </footer>
+
+    <!-- Mobile Nav JavaScript -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('navMenu');
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        // Close menu after clicking link on mobile
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            })
+        })
+    </script>
+</body>
+</html>
